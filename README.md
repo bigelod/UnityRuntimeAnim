@@ -6,11 +6,18 @@ This is not for animating individual parts of a 3D model (eg: bones in a skeleto
 How it's meant to be used: Objects in-game assign themselves to "slots" on each animation, intended for use with another app that allows runtime configuration of 3D model-to-slot assignment
 
 What is supported:
+
 Hierarchy of objects
+
 Local position, rotation, and scaling
+
 Animating float values
+
 Linear interpolation between values, or "instant" changes after keyframe reached
+
 Looping animations (animation stops on last frame if not looping)
+
 Changing to another animation after last keyframe (if looping is not enabled)
+
 
 Unity version 2018.4.23f1
