@@ -1,0 +1,62 @@
+NOTE: This absolutely can be improved / replaced with JSON or XML or something more modern!
+
+This is just a quick example of how animations can function
+--------------------------------------------------------------------------------
+Example data format as CSV where comma count determines the type of the frames:
+
+First frame of an animation (sets the object slots and hierarchy) for a total of 14 commas:
+ID (unique number of the object, starts at 1)
+SlotName
+AnimationName (name of the animation)
+ChildOf (ID that we are children of, 0 if none)
+FrameTime in ms (useful for a "smoothing time" if not 0)
+Instant (0 for smooth animation between values, 1 if it changes instantly on the frame)
+Position X,Y,Z (relative to parent if ChildOf > 0)
+Rotation X,Y,Z (relative to parent if ChildOf > 0)
+Scale X,Y,Z (relative to parent if ChildOf > 0)
+eg:
+1,Head,Default,0,0,0,0,0,0,0,0,0,1,1,1
+
+Later frames of animation can be just 12 commas for:
+ID
+AnimationName
+FrameTime in ms
+Instant
+Position X,Y,Z (relative to parent if ChildOf > 0)
+Rotation X,Y,Z (relative to parent if ChildOf > 0)
+Scale X,Y,Z (relative to parent if ChildOf > 0)
+eg:
+1,Default,1000,0,1,0,0,0,0,1,1,1
+
+*STRETCH GOAL CONTENT*
+---------------------
+Animating variables can be done by looking at 4 commas:
+VariableName
+AnimationName
+FrameTime in ms
+Instant (jumps to this value at the frame exactly rather than smoothly)
+Value
+eg: Turn the lights on after 1 second
+LightsOn,EngineOn,0,1,0
+LightsOn,EngineOn,1000,1,1
+
+Configuring animations can be done with 3 commas:
+AnimationName
+Loop
+GoToAnim the animation to go to on end (NA for none)
+eg:
+Default,1,NA
+
+--------------------------------------------------------------------
+Example animation: A head with a hat bobs up and down
+--------------------------------------------------------------------
+1,Head,Default,0,0,0,0,0,0,0,0,0,1,1,1
+2,Hat,Default,1,0,0,0,0,0,0,0,0,1,1,1
+1,Default,1000,0,0,1,0,0,0,0,1,1,1
+1,Default,2000,0,0,0,0,0,0,0,1,1,1
+--------------------------------------------------------------------
+Further thoughts:
+--------------------------------------------------------------------
+The playback side of Artspark/the Unity playback of the animation would have variables that alter the animation speed (eg: slower or faster), so ms is relative to normal 1.0x speed
+
+Playback side also controls looping, perhaps later this information can be included in animation properties

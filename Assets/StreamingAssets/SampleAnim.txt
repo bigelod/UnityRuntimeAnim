@@ -1,0 +1,11 @@
+Default,1,NA
+1,Head,Default,0,0,0,0,0,0,0,0,0,1,1,1
+1,Default,1000,0,0,1,0,0,0,0,1,1,1
+1,Default,2000,0,0,0,0,0,0,0,1,1,1
+2,Hat,Default,1,0,0,0,1,0,0,0,0,1,1,1
+2,Default,2000,0,0,1,0,0,0,0,1,1,1
+LightsOn,Default,0,1,0
+LightsOn,Default,1000,1,1
+LightsOn,Default,2000,1,0
+Lerp,Default,0,0,0
+Lerp,Default,2000,0,1
