@@ -28,8 +28,6 @@ Scale X,Y,Z (relative to parent if ChildOf > 0)
 eg:
 1,Default,1000,0,1,0,0,0,0,1,1,1
 
-*STRETCH GOAL CONTENT*
----------------------
 Animating variables can be done by looking at 4 commas:
 VariableName
 AnimationName
@@ -57,6 +55,6 @@ Example animation: A head with a hat bobs up and down
 --------------------------------------------------------------------
 Further thoughts:
 --------------------------------------------------------------------
-The playback side of Artspark/the Unity playback of the animation would have variables that alter the animation speed (eg: slower or faster), so ms is relative to normal 1.0x speed
+The playback side of the app showing the animation would have variables that alter the animation speed (eg: slower or faster), so ms is relative to normal 1.0x speed
 
 Playback side also controls looping, perhaps later this information can be included in animation properties
